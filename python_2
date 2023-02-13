@@ -1,0 +1,162 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNToz4Xz/ojJRuh9x4vstvf",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kiruthikaloganathan/Exception.scala/blob/master/python_2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "teL4HLIO68C2",
+        "outputId": "0b8dc8f2-06d3-4468-db3f-fcdb2a06c7c6"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 123\n",
+            "Reversed number:  321\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to reverse the digits of a number literally\n",
+        "# Input  = 1234\n",
+        "# Output = 4321\n",
+        "\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "reverse = 0\n",
+        "\n",
+        "while num > 0:\n",
+        "    rem = num % 10                  # extract the last digit\n",
+        "    reverse = reverse * 10 + rem    # append rem to the end of the reversed number\n",
+        "    num //= 10                      # drop the last digit\n",
+        "\n",
+        "print(\"Reversed number: \", reverse)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "list1 = [10, 20, 25, 30, 35]\n",
+        "list2 = [40, 45, 60, 75, 90]\n",
+        "list3 =[]\n",
+        "for i in list1:\n",
+        "  if i%2!=0:\n",
+        "    list3.append(i)\n",
+        "#print(list3)\n",
+        "for i in list2:\n",
+        "  if i%2 == 0:\n",
+        "    list3.append(i)\n",
+        "print(list3)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CUMVX5lh8y99",
+        "outputId": "88ae775c-1486-453d-89d3-9cbd64656e1f"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[25, 35]\n",
+            "[25, 35, 40, 60, 90]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "number = 3456\n",
+        "num = 0\n",
+        "while number > 0:\n",
+        "  rem = number%10\n",
+        "  #print(num)\n",
+        "  reverse = num * 10 + rem\n",
+        "  number //= 10\n",
+        "  print(reverse, end =' ')\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "B0WTjRk3-1xY",
+        "outputId": "6e1a0603-a0c6-4d4a-a0d9-bcc8590962cd"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6 5 4 3 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(6, 0, -1):\n",
+        "    for j in range(0, i-1):\n",
+        "        print('*', end = ' ')\n",
+        "    print(' ')\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0LOVjH72CkhE",
+        "outputId": "12910671-c7bb-42e3-df33-4b781664bd73"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "* * * * *  \n",
+            "* * * *  \n",
+            "* * *  \n",
+            "* *  \n",
+            "*  \n",
+            " \n"
+          ]
+        }
+      ]
+    }
+  ]
+}
