@@ -1,0 +1,500 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM2FgfnB6InaHCnb32Et+LD",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kiruthikaloganathan/Exception.scala/blob/master/Lambda_function.ipynb_1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Sfiic4wL1jHb",
+        "outputId": "19da6eab-d8eb-4e38-f77c-88ce2342697b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(\"hello\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#assigment-write a program to reverse a list and print it in upper case\n",
+        "\n",
+        "num_list = \"Python\"\n",
+        "#print (num_list.upper())\n",
+        "num_list1 = list(map(lambda x : x.upper(), num_list[::-1]))\n",
+        "print (num_list1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kZudFUKOA4Vx",
+        "outputId": "c19d3716-70c4-464d-ed39-87d0a4593377"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "PYTHON\n",
+            "['N', 'O', 'H', 'T', 'Y', 'P']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num_list = \"python\"\n",
+        "num_slice = num_list[::-1]\n",
+        "num_list1 = list(map(lambda x : x.upper(), num_slice))\n",
+        "num_list1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IXYr4_Fjlcus",
+        "outputId": "f6653d6e-204a-4c15-c9d8-6a8e94313ff4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['N', 'O', 'H', 'T', 'Y', 'P']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "xRuIWbQ2rJbj"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#simple adding\n",
+        "add = lambda a,d :(a+d) #a and d are arguments here\n",
+        "print(add(2,3))\n",
+        "\n",
+        "#passing the value in lambda function\n",
+        "add1 = (lambda a,b : a+b)(2,4)\n",
+        "\n",
+        "#in lambda no need to assign a variable we can call directly(imediately invoked function)\n",
+        "(lambda a,b : a*b)(5,6)\n",
+        "\n",
+        "#passing default value\n",
+        "add = lambda x,y = 100 : x+y\n",
+        "print(add(2))\n",
+        "\n",
+        "add = lambda x : x +100\n",
+        "print(add(50))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LKpA5uIXpD0_",
+        "outputId": "04f9443d-2072-4d9b-f6a9-1ef1190da018"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "102\n",
+            "150\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#keyword arguments\n",
+        "product = lambda x,y,z : x*y*z\n",
+        "print(product(x=2, y=3, z=5))\n",
+        "\n",
+        "#default argument value\n",
+        "add = lambda x,y = 12, z =4 : x+y+z\n",
+        "print(add(3))\n",
+        "\n",
+        "#as many as arguments\n",
+        "addition = lambda *args : sum(args)\n",
+        "print(addition(3,5,7,7))\n",
+        "\n",
+        "#higher order function take one or more function as a arguments and return one or more function\n",
+        "higher_ord_fun = lambda x, fun : x + fun(x)\n",
+        "higher_ord_fun(20, lambda x : x*x)\n",
+        "\n",
+        "#if condition in lambda\n",
+        "(lambda x : (x%2 and 'even' or 'odd'))(150)\n",
+        "\n",
+        "#check string is substring of the given string\n",
+        "sub_string = lambda string :string in \"welcome to python\"\n",
+        "print(sub_string(\"java\"))\n",
+        "print(sub_string(\"python\"))\n",
+        "\n",
+        "#filter a number using specific condition\n",
+        "num = [10,29,34,56,34]\n",
+        "greater = list(filter(lambda x : x >30, num))\n",
+        "print(greater)\n",
+        "\n",
+        "#filter a number divisable by 4\n",
+        "num = [4,8,3,16,67,7]\n",
+        "division = list(filter(lambda x : (x%4 == 0), num))\n",
+        "print(division)\n",
+        "\n",
+        "#map function along with lambda\n",
+        "#map function accepts two arguments and it take that function and apply every element of the list and return a modified list\n",
+        "list1 = [10, 40, 56, 46, 73]\n",
+        "double_number = list(map(lambda x : x*2, list1))\n",
+        "print(double_number)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LqcwE9-SKljh",
+        "outputId": "f51056ac-531a-4b69-bbb3-f1952be1d8c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "30\n",
+            "19\n",
+            "22\n",
+            "False\n",
+            "True\n",
+            "[34, 56, 34]\n",
+            "[4, 8, 16]\n",
+            "[20, 80, 112, 92, 146]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#reduce function, it applies rolling calclation all applies in the result it used to calculate and multiply all the numbers togeather\n",
+        "#part of func tool moodulr\n",
+        "#so we are importing funtool\n",
+        "from functools import reduce\n",
+        "list4 = [2,3,4,5,6]\n",
+        "sum = reduce(lambda x, y : (x+y),list4)\n",
+        "print(sum)\n",
+        "\n",
+        "#user defined funtion\n",
+        "#calculate the qudratic function\n",
+        "def quadratic(a,b,c):\n",
+        "  return lambda x : a*b**2 + b*x + c\n",
+        "f = quadratic(2,3,4)\n",
+        "f(1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6s32lwgmYMfv",
+        "outputId": "033738b5-4f2f-46a2-fdf7-69776661d475"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "20\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "25"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 51
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "DCN9F0YzXp8K"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# using inbuild function pow\n",
+        "print(\"hello\")\n",
+        "list3 = [13,65,87,98]\n",
+        "cube = list(map(lambda x : pow(x,3), list3))\n",
+        "print(cube)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "05K7WLPyXf7A",
+        "outputId": "61e1776f-260e-48fc-9d44-28aa3f007de8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello\n",
+            "[2197, 274625, 658503, 941192]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Given two integer numbers return their product only if the product is equal to or lower than 1000, else return their sum.\n",
+        "number1 = 20\n",
+        "number2 = 30\n",
+        "multi = number1 * number2\n",
+        "if multi <= 1000:\n",
+        "  print(\"the multiplication is : \", multi)\n",
+        "else:\n",
+        "  print(\"false\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "s6au9K1Jlb6-",
+        "outputId": "f46efff6-e191-4a0c-ab02-6f549ce13ff7"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "the multiplication is :  600\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def multi(a,b):\n",
+        "  mu = a*b\n",
+        "  if mu <= 1000:\n",
+        "    print(\"Multiplication of two numbers : \" , mu)\n",
+        "  else:\n",
+        "    print(\"false\")\n",
+        "multi(20,30)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yZX3_7ELmqnb",
+        "outputId": "0f821ea6-07be-4c19-c317-2222da14ba2c"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Multiplication of two numbers :  600\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def multi(a,b):\n",
+        "  variable = a*b\n",
+        "  if variable >= 1000:\n",
+        "    return(variable)\n",
+        "  else:\n",
+        "    return(\"add two numbers : \" , a+b)\n",
+        "result = multi(20,30)\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ONJ9iBlSosX4",
+        "outputId": "0788978a-08ee-4546-f28b-2a910af2b4a0"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "('add two numbers : ', 50)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Write a program to iterate the first 10 numbers and in each iteration, print the sum of the current and previous number.\n",
+        "\n",
+        "list1 = 0\n",
+        "for i in range(5):\n",
+        "  list = i + list1\n",
+        "  print(\"current number: \", i , \"previous number:\", list1 , \"sum =\", i+list1 )\n",
+        "  list1 = i"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Kj_Omzt2w7Gn",
+        "outputId": "abd71119-1e7f-4853-8f36-5b7fbc975044"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "current number:  0 previous number: 0 sum = 0\n",
+            "current number:  1 previous number: 0 sum = 1\n",
+            "current number:  2 previous number: 1 sum = 3\n",
+            "current number:  3 previous number: 2 sum = 5\n",
+            "current number:  4 previous number: 3 sum = 7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Write a program to accept a string from the user and display characters that are present at an even index number.\n",
+        "\n",
+        "#For example, str = \"pynative\" so you should display ‘p’, ‘n’, ‘t’, ‘v’.\n",
+        "# accept input string from a user\n",
+        "word = input('Enter word ')\n",
+        "print(\"Original String:\", word)\n",
+        "\n",
+        "# get the length of a string\n",
+        "size = len(word)\n",
+        "\n",
+        "# iterate a each character of a string\n",
+        "# start: 0 to start with first character\n",
+        "# stop: size-1 because index starts with 0\n",
+        "# step: 2 to get the characters present at even index like 0, 2, 4\n",
+        "print(\"Printing only even index chars\")\n",
+        "for i in range(0, size - 1, 2):\n",
+        "    print(\"index[\", i, \"]\", word[i])\n",
+        "\n",
+        "str = input(\"enter the number\")\n",
+        "for i in str[0::2]:\n",
+        "  print(i)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NDZALQa0z3zS",
+        "outputId": "b9d080fe-baee-45f9-a72c-ace1792a07d4"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter word kavitha\n",
+            "Original String: kavitha\n",
+            "Printing only even index chars\n",
+            "index[ 0 ] k\n",
+            "index[ 2 ] v\n",
+            "index[ 4 ] t\n",
+            "enter the numberkavitha\n",
+            "k\n",
+            "v\n",
+            "t\n",
+            "a\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "0WVIlFy_BoGk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "rvt53CaYBo3V"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
